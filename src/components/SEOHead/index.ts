@@ -1,0 +1,1 @@
+export { SEOHead, SEOConfigs } from './SEOHead';
