@@ -6,6 +6,7 @@ const contactInfo = [
   { icon: 'phone', text: '585-857-0319', type: 'phone' },
   { icon: 'map-pin', text: 'Rochester, NY 14604', type: 'location' },
   { icon: 'github', text: 'github.com/cxm6467', type: 'github', url: 'https://github.com/cxm6467' },
+  { icon: 'resume', text: 'Resume', type: 'resume', isDownload: true },
 ];
 
 const skills = [
@@ -28,6 +29,15 @@ const certifications = [
 
 export const Sidebar = () => {
   const theme = useTheme();
+
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/Marasco_Resume2025.pdf';
+    link.download = 'Christopher_Marasco_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const iconProps = {
     width: 16,
@@ -60,6 +70,12 @@ export const Sidebar = () => {
     </Box>
   );
 
+  const ResumeIcon = () => (
+    <Box component="svg" sx={iconProps} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+    </Box>
+  );
+
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case 'envelope':
@@ -70,6 +86,8 @@ export const Sidebar = () => {
         return <MapPinIcon />;
       case 'github':
         return <GitHubIcon />;
+      case 'resume':
+        return <ResumeIcon />;
       default:
         return null;
     }
@@ -246,7 +264,26 @@ export const Sidebar = () => {
               >
                 {getIcon(contact.icon)}
               </Box>
-              {contact.url ? (
+              {contact.isDownload ? (
+                <Box
+                  component="button"
+                  onClick={handleResumeDownload}
+                  sx={{
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontSize: 'inherit',
+                    padding: 0,
+                    '&:hover': {
+                      textDecoration: 'underline',
+                    },
+                  }}
+                >
+                  {contact.text}
+                </Box>
+              ) : contact.url ? (
                 <Link
                   href={contact.url}
                   target="_blank"
