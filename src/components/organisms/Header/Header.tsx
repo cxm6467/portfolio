@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Container, Button, IconButton, Tooltip } from '@mui/material';
-import { Download, GetApp } from '@mui/icons-material';
+import { PictureAsPdf } from '@mui/icons-material';
 import { Logo } from '@atoms/Logo';
 
 export const Header = () => {
@@ -21,7 +21,7 @@ export const Header = () => {
           {/* Desktop Resume Button */}
           <Button
             variant="outlined"
-            startIcon={<Download />}
+            startIcon={<PictureAsPdf />}
             onClick={handleResumeDownload}
             sx={{
               display: { xs: 'none', sm: 'flex' },
@@ -34,11 +34,11 @@ export const Header = () => {
               },
             }}
           >
-            Download Resume
+            Resume
           </Button>
 
           {/* Mobile Resume Button */}
-          <Tooltip title="Download Resume" placement="left">
+          <Tooltip title="Resume" placement="left">
             <IconButton
               onClick={handleResumeDownload}
               sx={{
@@ -49,9 +49,9 @@ export const Header = () => {
                   color: 'white',
                 },
               }}
-              aria-label="Download Resume"
+              aria-label="Resume"
             >
-              <GetApp />
+              <PictureAsPdf />
             </IconButton>
           </Tooltip>
         </Toolbar>
