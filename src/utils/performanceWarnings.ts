@@ -1,5 +1,3 @@
-import { trackEvent } from './analytics';
-
 // Bundle size monitoring
 export const monitorBundleSize = () => {
   if (!import.meta.env.DEV) return;

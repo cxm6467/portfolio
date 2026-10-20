@@ -1,3 +1,4 @@
+import React from 'react';
 import { onCLS, onFCP, onINP, onLCP, onTTFB, type Metric } from 'web-vitals';
 import { trackEvent } from './analytics';
 
@@ -157,6 +158,3 @@ export const monitorResourceLoading = () => {
     observer.observe({ entryTypes: ['resource'] });
   }
 };
-
-// Add React import for the hook
-import React from 'react';

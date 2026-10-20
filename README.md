@@ -39,12 +39,27 @@ npm run preview
 ```
 src/
 ├── components/
-│   ├── atoms/          # Basic UI elements (LogoIcon, etc.)
-│   ├── molecules/      # Simple component combinations
-│   └── organisms/      # Complex components (Resume, Sidebar, MainContent)
-├── theme/              # Material-UI theme configuration
-└── features/App/       # Main application component
+│   ├── atoms/               # Basic UI elements (LogoIcon)
+│   ├── organisms/Resume/    # Main resume layout (Sidebar, MainContent)
+│   ├── SEOHead/             # Reusable SEO/meta configuration
+│   └── PerformanceDashboard/ # Dev-only web vitals dashboard
+├── data/                    # Resume data (contact, skills, certifications)
+├── theme/                   # Material-UI theme configuration
+├── utils/                   # Analytics, web vitals, performance monitoring
+├── test/                    # Test setup and helpers
+└── features/App/            # Main application component
 ```
+
+### Testing
+```bash
+# Run the test suite once
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+Tests use [Vitest](https://vitest.dev/) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
 
 ## Design Principles
 - Responsive design with mobile-first approach

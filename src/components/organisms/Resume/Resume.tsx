@@ -73,7 +73,7 @@ export const Resume = () => {
         }}
         aria-hidden="true"
       >
-        Christopher J Marasco Senior Full Stack Software Engineer JavaScript TypeScript React Node.js AWS PostgreSQL MongoDB GraphQL REST API Docker Microservices Git HTML CSS SQL NoSQL Backend Frontend Fullstack Developer Programming Software Development Web Applications Cloud Computing Amazon Web Services Lambda DynamoDB RDS API Gateway CloudFormation Express Angular Jest Unit Testing Agile Scrum JIRA Quest Mindshare Progress Residential Aerosafe Global Medisked Xerox Rochester NY Eagle Scout OpenAI GPT-4 Vite Zustand Terraform CloudFront S3 CloudWatch Express.js PII Detection AWS PowerTools
+        Christopher J Marasco Senior Full Stack Software Engineer JavaScript TypeScript React Node.js AWS PostgreSQL MongoDB GraphQL REST API Docker Microservices Git HTML CSS SQL NoSQL Backend Frontend Fullstack Developer Programming Software Development Web Applications Cloud Computing Amazon Web Services Lambda DynamoDB RDS API Gateway CloudFormation Express Angular Jest Unit Testing Agile Scrum JIRA Quest Mindshare Progress Residential Aerosafe Global Medisked Xerox Rochester NY Eagle Scout Kubernetes k3s Traefik Cloudflare MCP gRPC Prometheus Grafana Terraform Claude Code CI/CD
       </Box>
       
         <Sidebar />
@@ -107,7 +107,7 @@ export const Resume = () => {
             display: 'flex',
             alignItems: 'center',
             '&:hover': {
-              color: theme.palette.brand.primaryBlue,
+              color: theme.palette.brand.brightBlue,
             },
           }}
           aria-label="View portfolio source code on GitHub"

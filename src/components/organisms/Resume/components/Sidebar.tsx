@@ -1,40 +1,21 @@
 import { Box, Typography, useTheme, Link } from '@mui/material';
 import { PictureAsPdf } from '@mui/icons-material';
 import { LogoIcon } from '@atoms/LogoIcon';
-
-const contactInfo = [
-  { icon: 'envelope', text: 'cxm6467@gmail.com', type: 'email' },
-  { icon: 'phone', text: '585-857-0319', type: 'phone' },
-  { icon: 'map-pin', text: 'Rochester, NY 14604', type: 'location' },
-  { icon: 'github', text: 'github.com/cxm6467', type: 'github', url: 'https://github.com/cxm6467' },
-  { icon: 'resume', text: 'Resume', type: 'resume', isDownload: true },
-];
-
-const skills = [
-  { name: 'JavaScript', years: '7+ years' },
-  { name: 'AWS', years: '6+ years' },
-  { name: 'Node.js', years: '4+ years' },
-  { name: 'TypeScript', years: '4+ years' },
-  { name: 'PostgreSQL', years: '4+ years' },
-  { name: 'GraphQL', years: '3+ years' },
-  { name: 'RESTful APIs', years: '3+ years' },
-  { name: 'React', years: '2+ years' },
-  { name: 'MongoDB', years: '2+ years' },
-  { name: 'DynamoDB', years: '1 year' },
-];
-
-const certifications = [
-  { name: 'AWS Certified Architect Associate', org: 'Amazon Web Services' },
-  { name: 'AWS Certified Developer Associate', org: 'Amazon Web Services' },
-];
+import {
+  contactInfo,
+  skills,
+  certifications,
+  RESUME_PDF_URL,
+  RESUME_PDF_FILENAME,
+} from '@/data/resume';
 
 export const Sidebar = () => {
   const theme = useTheme();
 
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/Marasco_Resume2025.pdf';
-    link.download = 'Christopher_Marasco_Resume.pdf';
+    link.href = RESUME_PDF_URL;
+    link.download = RESUME_PDF_FILENAME;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -267,6 +248,7 @@ export const Sidebar = () => {
                 <Box
                   component="button"
                   onClick={handleResumeDownload}
+                  aria-label="Download resume (PDF)"
                   sx={{
                     color: 'inherit',
                     textDecoration: 'none',
@@ -274,7 +256,10 @@ export const Sidebar = () => {
                     border: 'none',
                     cursor: 'pointer',
                     fontSize: 'inherit',
-                    padding: 0,
+                    fontFamily: 'inherit',
+                    padding: '6px 0',
+                    minHeight: '32px',
+                    textAlign: 'left',
                     '&:hover': {
                       textDecoration: 'underline',
                     },
@@ -285,8 +270,9 @@ export const Sidebar = () => {
               ) : contact.url ? (
                 <Link
                   href={contact.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(contact.url.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   sx={{
                     color: 'inherit',
                     textDecoration: 'none',

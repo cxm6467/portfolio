@@ -76,12 +76,11 @@ const experienceData = [
 ];
 
 const projectData = {
-  title: 'AI Interview Prep Platform',
-  technologies: ['React 18', 'TypeScript', 'Node.js', 'AWS Lambda', 'OpenAI GPT-4', 'Terraform', 'Vite', 'Express.js'],
-  description: 'Comprehensive AI-powered platform that helps job seekers prepare for technical interviews by analyzing resumes against job descriptions and generating personalized interview materials. Features resume analysis, ATS score calculation, real-time AI coaching with multiple interviewer perspectives, and secure PII detection/scrubbing. Built with modern React architecture using Zustand state management, deployed on AWS with Terraform IaC.',
+  title: 'Caboose AI',
+  technologies: ['Kubernetes (k3s)', 'Traefik', 'Cloudflare Tunnel', 'MCP', 'TypeScript', 'gRPC', 'Prometheus', 'Grafana'],
+  description: 'Self-hosted AI lab and platform (caboose-ai.io): a single on-premise machine rebuilt into a small Kubernetes cluster where everything is deployed and wired up with Claude Code. Traffic flows Cloudflare edge to tunnel to traefik to k3s pods with no open inbound ports and no origin IP in DNS. The org brain exposes 21 MCP tools spanning every repository and their relationships, alongside agentic projects including a motorcycle ride-video editor and a multi-agent acting lab, with Prometheus, Loki, and Grafana observability.',
   links: [
-    { label: 'GitHub', url: 'https://github.com/cxm6467/ai-interview-prep' },
-    { label: 'Live Demo', url: 'https://ai-ip.chrismarasco.io' },
+    { label: 'Live Site', url: 'https://caboose-ai.io' },
   ],
 };
 
